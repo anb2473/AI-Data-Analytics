@@ -1,0 +1,10 @@
+[
+  {
+    "text": "find users older than 30",
+    "json": {"operation":"select","target":"users","conditions":[{"field":"age","op":">","value":30}]}
+  },
+  {
+    "text": "get all products cheaper than 50",
+    "json": {"operation":"select","target":"products","conditions":[{"field":"price","op":"<","value":50}]}
+  }
+]

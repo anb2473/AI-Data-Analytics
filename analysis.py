@@ -164,10 +164,28 @@ def generate_json(text, model, tokenizer):
     
     # Try to extract JSON from the output
     # Look for JSON-like patterns in the output
-    print(json_str)
     json_match = re.search(r'\{.*\}', json_str)
     if json_match:
         json_str = json_match.group(0)
+    else:
+        # If no braces found, try to wrap the content
+        if '"operation"' in json_str:
+            json_str = "{" + json_str + "}"
+    
+    # Try to fix common issues
+    if '"op": ""' in json_str:
+        # Try to infer the operator from the text
+        if "older than" in text or "greater than" in text:
+            json_str = json_str.replace('"op": ""', '"op": ">"')
+        elif "cheaper than" in text or "less than" in text:
+            json_str = json_str.replace('"op": ""', '"op": "<"')
+        elif "equal to" in text or "equals" in text:
+            json_str = json_str.replace('"op": ""', '"op": "="')
+    
+    # Fix malformed conditions array
+    if '"conditions": [' in json_str and '"field"' in json_str:
+        # Convert array format to object format
+        json_str = re.sub(r'"conditions": \[([^\]]+)\]', r'"conditions": [{\1}]', json_str)
     
     try:
         return json.loads(json_str)

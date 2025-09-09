@@ -6,5 +6,77 @@
   {
     "text": "get all products cheaper than 50",
     "json": {"operation":"select","target":"products","conditions":[{"field":"price","op":"<","value":50}]}
+  },
+  {
+    "text": "show users younger than 25",
+    "json": {"operation":"select","target":"users","conditions":[{"field":"age","op":"<","value":25}]}
+  },
+  {
+    "text": "find products with price greater than 100",
+    "json": {"operation":"select","target":"products","conditions":[{"field":"price","op":">","value":100}]}
+  },
+  {
+    "text": "get all customers from New York",
+    "json": {"operation":"select","target":"customers","conditions":[{"field":"city","op":"=","value":"New York"}]}
+  },
+  {
+    "text": "find orders placed after 2023",
+    "json": {"operation":"select","target":"orders","conditions":[{"field":"date","op":">","value":"2023"}]}
+  },
+  {
+    "text": "show products in electronics category",
+    "json": {"operation":"select","target":"products","conditions":[{"field":"category","op":"=","value":"electronics"}]}
+  },
+  {
+    "text": "get users with email ending in gmail.com",
+    "json": {"operation":"select","target":"users","conditions":[{"field":"email","op":"like","value":"%gmail.com"}]}
+  },
+  {
+    "text": "find products with stock less than 10",
+    "json": {"operation":"select","target":"products","conditions":[{"field":"stock","op":"<","value":10}]}
+  },
+  {
+    "text": "show all employees with salary above 50000",
+    "json": {"operation":"select","target":"employees","conditions":[{"field":"salary","op":">","value":50000}]}
+  },
+  {
+    "text": "get customers who registered this year",
+    "json": {"operation":"select","target":"customers","conditions":[{"field":"registration_date","op":">=","value":"2024-01-01"}]}
+  },
+  {
+    "text": "find products with rating higher than 4.5",
+    "json": {"operation":"select","target":"products","conditions":[{"field":"rating","op":">","value":4.5}]}
+  },
+  {
+    "text": "show users with status active",
+    "json": {"operation":"select","target":"users","conditions":[{"field":"status","op":"=","value":"active"}]}
+  },
+  {
+    "text": "get all orders with total amount between 100 and 500",
+    "json": {"operation":"select","target":"orders","conditions":[{"field":"total","op":">=","value":100},{"field":"total","op":"<=","value":500}]}
+  },
+  {
+    "text": "find products with name containing laptop",
+    "json": {"operation":"select","target":"products","conditions":[{"field":"name","op":"like","value":"%laptop%"}]}
+  },
+  {
+    "text": "show customers with phone number starting with 555",
+    "json": {"operation":"select","target":"customers","conditions":[{"field":"phone","op":"like","value":"555%"}]}
+  },
+  {
+    "text": "get all users with age between 18 and 65",
+    "json": {"operation":"select","target":"users","conditions":[{"field":"age","op":">=","value":18},{"field":"age","op":"<=","value":65}]}
+  },
+  {
+    "text": "find products with price equal to 99.99",
+    "json": {"operation":"select","target":"products","conditions":[{"field":"price","op":"=","value":99.99}]}
+  },
+  {
+    "text": "show employees from department sales",
+    "json": {"operation":"select","target":"employees","conditions":[{"field":"department","op":"=","value":"sales"}]}
+  },
+  {
+    "text": "get all orders with status pending",
+    "json": {"operation":"select","target":"orders","conditions":[{"field":"status","op":"=","value":"pending"}]}
   }
 ]
